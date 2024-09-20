@@ -26,7 +26,7 @@ app.post("/send", (req, res) => {
   try {
     const { sender, recipient, amount, owner, signature } = req.body;
     //Mensaje en común
-    const msg = "Hola";
+    const msg = `Pago de ${amount} para:${recipient}`;
     const bytes = utf8ToBytes(msg);
     const msgHash = toHex(bytes);
     //Reconstruir el signature
